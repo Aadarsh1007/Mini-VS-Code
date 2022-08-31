@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../stylesheets/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+  <div id="main">
+    <div id="left">
+      <h4>Aadarsh-VS</h4>
+      <form action="formtext">
+        <input name="fname" type="text" placeholder="filename">`
+      </form>
+      <hr>
+      <div id="files">
+        <% files.forEach(function(val){ %>
+       <h5> <span> <a href="#"><%= val %></a> </span> <span> <a href="/screen/ <%= val %>"> <i class="ri-share-box-fill"></i> </a> <a href='/delete/ <%=val%>'> <i class="ri-delete-bin-6-line"></i> </a> </span> </h5>
+        <%})%>
+    </div>
+
+    </div>
+    <div id="right"> 
+      <div id="top">
+        <%= filenames %>
+      </div>
+      <div id="bottom">
+        <form action="/save/<%= filenames %>", method="post">
+          <textarea name="tarea"><%= data %></textarea>
+          <input type="submit" value="save">
+        </form>      
+      </div>
+    </div>
+  </div>
+</body>
+</html>
